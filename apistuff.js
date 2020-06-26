@@ -87,10 +87,12 @@ divs.addEventListener(onscroll, () => {
 
 
 const arrayOfCharacters = [];
-
+// You are seeing if each object has a name, creating a separate object of them with the key value pair of name : char.name, and then pushing that object to a specific array. 
 const searchThrough = swapi.map((char) => {
     if (char.find(name) || char.name.length > 0) {
-        arrayOfCharacters.push(char.name);
+        arrayOfCharacters.push({
+            name: char.name
+        });
         console.log(arrayOfCharacters);
     }
 })
@@ -99,7 +101,9 @@ const arrayOfCharactersOver50Kilograms = [];
 
 const searchThrough2 = swapi.map((char) => {
     if (char.weight > 50) {
-        arrayOfCharactersOver50Kilograms.push(char.name);
+        arrayOfCharactersOver50Kilograms.push({
+            name: char.name
+        });
         console.log(arrayOfCharactersOver50Kilograms);
     }
 })
